@@ -20,7 +20,8 @@ export const tasksAPI = {
 
   updateTask: async (token, taskId, updates) => {
     const response = await axios.put(`${API_BASE_URL}/tasks/${taskId}`, updates, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}`,
+    'Access-Control-Allow-Origin': '*' }
     })
     return response.data
   },
