@@ -9,7 +9,7 @@ export const authAPI = {
       password
     }, {
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        Accept: 'application/json',
       }
     })
     return response.data
@@ -22,7 +22,20 @@ export const authAPI = {
       password
     }, {
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        Accept: 'application/json',
+      }
+    })
+    return response.data
+  },
+
+  register: async (username, email, password) => {
+    const response = await axios.post(`${API_BASE_URL}/register`, {
+      username,
+      email,
+      password
+    }, {
+      headers: {
+        Accept: 'application/json',
       }
     })
     return response.data
