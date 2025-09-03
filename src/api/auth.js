@@ -11,7 +11,7 @@ export const authAPI = {
         headers: {
           Accept: 'application/json',
         },
-        withCredentials: false, // 🚫 very important
+        withCredentials: false, 
       }
     )
     return response.data
