@@ -8,7 +8,9 @@ export const authAPI = {
       `${API_BASE_URL}/login`,
       { email, password },
       {
-        headers: { Accept: 'application/json' },
+        headers: { Accept: '*/*' ,
+          'Content-Type': 'multipart/form-data'
+        },
       }
     )
     return response.data
