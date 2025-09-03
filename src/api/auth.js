@@ -7,6 +7,10 @@ export const authAPI = {
     const response = await axios.post(`${API_BASE_URL}/login`, {
       email,
       password
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
     })
     return response.data
   },
@@ -16,6 +20,10 @@ export const authAPI = {
       username,
       email,
       password
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
     })
     return response.data
   }
