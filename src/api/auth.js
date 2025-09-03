@@ -9,7 +9,7 @@ export const authAPI = {
       { email, password },
       {
         headers: { Accept: '*/*' ,
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'application/json'
         },
         params: {
           email,
