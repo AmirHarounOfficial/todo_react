@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'https://todo.eylx.sa/public/api'
+const API_BASE_URL = 'http://127.0.0.1:8000/api'
 
 export const tasksAPI = {
   getTasks: async (token, params = {}) => {
@@ -20,8 +20,7 @@ export const tasksAPI = {
 
   updateTask: async (token, taskId, updates) => {
     const response = await axios.put(`${API_BASE_URL}/tasks/${taskId}`, updates, {
-      headers: { Authorization: `Bearer ${token}`,
-    'Access-Control-Allow-Origin': '*' }
+      headers: { Authorization: `Bearer ${token}` }
     })
     return response.data
   },
