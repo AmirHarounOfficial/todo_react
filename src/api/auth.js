@@ -6,15 +6,16 @@ export const authAPI = {
   login: async (email, password) => {
     const response = await axios.post(
       `${API_BASE_URL}/login`,
+      // form-urlencoded body
+      new URLSearchParams({
+        email,
+        password,
+      }),
       {
         headers: {
           Accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        params:{
-          "email": email,
-          "password": password
-        },
-        withCredentials: false,
       }
     )
     return response.data
@@ -23,12 +24,15 @@ export const authAPI = {
   register: async (username, email, password) => {
     const response = await axios.post(
       `${API_BASE_URL}/register`,
-      { username, email, password },
+      {
+        username,
+        email,
+        password,
+      },
       {
         headers: {
           Accept: 'application/json',
         },
-        withCredentials: false,
       }
     )
     return response.data
