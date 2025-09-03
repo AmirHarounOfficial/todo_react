@@ -6,12 +6,15 @@ export const authAPI = {
   login: async (email, password) => {
     const response = await axios.post(
       `${API_BASE_URL}/login`,
-      { email, password },
       {
         headers: {
           Accept: 'application/json',
         },
-        withCredentials: false, 
+        params:{
+          "email": email,
+          "password": password
+        },
+        withCredentials: false,
       }
     )
     return response.data
