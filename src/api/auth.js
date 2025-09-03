@@ -6,7 +6,7 @@ export const authAPI = {
   login: async (email, password) => {
     const response = await axios.post(
       `${API_BASE_URL}/login`,
-      { "email": email, "password": password },
+      { email, password },
       {
         headers: { Accept: '*/*' ,
           'Content-Type': 'multipart/form-data'
