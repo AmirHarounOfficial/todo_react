@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'https://todo.eylx.sa/api'
+const API_BASE_URL = 'https://todo.eylx.sa/public/api'
 
 export const tasksAPI = {
   getTasks: async (token, params = {}) => {
